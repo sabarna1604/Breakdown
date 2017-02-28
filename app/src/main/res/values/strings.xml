@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BreakDown</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_mechanic_shed">LoginPage</string>
+    <string name="title_BreakDown">Signup</string>
+    <string name="search_result"></string>
+    <string name="menu_search">menu</string>
+    <string name="search_hint">places</string>
+</resources>
