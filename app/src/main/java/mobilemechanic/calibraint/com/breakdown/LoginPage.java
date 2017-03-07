@@ -4,12 +4,13 @@ package mobilemechanic.calibraint.com.breakdown;
  * Created by Aradhana on 27-02-2017.
  */
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import java.lang.String;
 import android.support.v7.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.util.Log;
-
+import android.preference.PreferenceManager;
 import android.content.Intent;
 
 import android.view.View;
@@ -31,6 +32,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 //        setContentView(R.layout.activity_signup);
+
         email = (EditText) findViewById(R.id.input_email);
         pw = (EditText) findViewById(R.id.input_password);
         log = (Button)findViewById(R.id.btn_log);
@@ -49,6 +51,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
 
     public void login() {
         Log.d(TAG, "Login");
+
 
         if (!validate()) {
             onLoginFailed();
@@ -73,8 +76,9 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                         // On complete call either onLoginSuccess or onLoginFailed
                         onLoginSuccess();
                         // onLoginFailed();
-                        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivityForResult(intent, REQUEST_SIGNUP);
+                        finish();
                     }
 
                     private void onLoginSuccess() {
@@ -98,7 +102,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
         // disable going back to the MainActivity
-        moveTaskToBack(true);
+        finish();
     }
     public void onLoginSuccess() {
         log.setEnabled(true);

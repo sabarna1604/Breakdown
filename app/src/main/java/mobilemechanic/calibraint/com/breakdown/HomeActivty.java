@@ -25,6 +25,7 @@ public class HomeActivty extends AppCompatActivity  {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginPage.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
+                finish();
 
             }
         });
@@ -33,6 +34,7 @@ public class HomeActivty extends AppCompatActivity  {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SignupPage.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
+                finish();
             }
         });
     }

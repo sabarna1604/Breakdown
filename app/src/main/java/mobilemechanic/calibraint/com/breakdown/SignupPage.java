@@ -70,8 +70,9 @@ public class SignupPage extends AppCompatActivity {
                         // onSignupFailed();
 
 
-                        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivityForResult(intent,REQUEST_SIGNUP );
+                        finish();
 
 
                     }
